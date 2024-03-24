@@ -47,6 +47,7 @@ $packagesToUninstall = @(
 
 # List of packages to install using Winget
 $packagesToInstall = @(
+    "0x192.UniversalAndroidDebloaterGUI",
     "7zip.7zip",
     "Bitwarden.Bitwarden",
     "dbeaver.dbeaver",
@@ -63,9 +64,11 @@ $packagesToInstall = @(
     "Microsoft.PowerToys",
     "Microsoft.VisualStudioCode",
     "Microsoft.WindowsTerminal",
+    "Mozilla.Firefox.DeveloperEdition",
     "NGWIN.PicPick",
     "ONLYOFFICE.DesktopEditors",
     "Ookla.Speedtest.CLI",
+    "Safing.Portmaster",
     "VideoLAN.VLC",
     "WhatsApp.WhatsApp"
 )
@@ -132,5 +135,7 @@ foreach ($package in $packagesToInstall) {
         Write-Host "$package is already installed."
     }
 }
+
+wsl --install -d Debian
 
 Read-Host -Prompt "Press Enter to finish"
