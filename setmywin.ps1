@@ -136,4 +136,20 @@ foreach ($package in $packagesToInstall) {
     }
 }
 
+# Check if WSL is enabled and installed
+$wslStatus = Get-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux
+if ($wslStatus.State -ne "Enabled") {
+    Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online
+    wsl --install --no-distribution
+} else {
+    Write-Host "WSL is already enabled."
+}
+
+# Update WSL
+Write-Host "Updating WSL..."
+wsl --update
+
+# Install Debian distribution
+wsl --install -d Debian -n
+
 Read-Host -Prompt "Press Enter to finish"
