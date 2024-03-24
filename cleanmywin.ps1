@@ -136,6 +136,4 @@ foreach ($package in $packagesToInstall) {
     }
 }
 
-wsl --install -d Debian
-
 Read-Host -Prompt "Press Enter to finish"
