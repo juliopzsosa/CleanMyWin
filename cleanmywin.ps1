@@ -1,6 +1,6 @@
 # Author: Julio P.
-# Version: 0.2
-# Date: 23.03.2024
+# Version: 0.3.2
+# Date: 24.03.2024
 
 # Check if the operating system is Windows 10 22H2 or later
 $os = Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Version
