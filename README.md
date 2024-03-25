@@ -1,4 +1,10 @@
 # SetMyWin
 v0.4
 
-´Start-Process powershell -Verb RunAs -ArgumentList .\setmywin.ps1´
+```powershell
+Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online
+```
+
+```powershell
+Start-Process powershell -Verb RunAs -ArgumentList .\setmywin.ps1
+```
